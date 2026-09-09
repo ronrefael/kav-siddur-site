@@ -139,7 +139,7 @@
   <p>A prayer request consists of a Hebrew name, a category, an optional short note, and a duration. All of these are visible to every user of the app. Do not include health details about an identifiable person without their consent, and do not include contact information &mdash; notes containing links, email addresses, or phone numbers are rejected.</p>
 
   <h3>Anonymous identity</h3>
-  <p>Posting uses an anonymous account created on your device. We never ask for your name, email, or phone number. This anonymous identity links your own requests to your device so you can delete them; it is not connected to any real-world identity.</p>
+  <p>When you open the Pray For feed (even just to read it), the app creates an anonymous account with our backend provider and keeps its session credentials on your device. We never ask for your name, email, or phone number, and the account carries no personal information. This anonymous identity links your own requests to your device so you can delete them; it is not connected to any real-world identity.</p>
 
   <h3>Retention</h3>
   <p>Requests expire automatically after at most 48 hours and are permanently deleted from our systems within 30 days of expiry. &ldquo;I prayed&rdquo; interactions are stored against the anonymous identity for counting and abuse prevention, and are deleted on the same schedule.</p>
@@ -164,7 +164,7 @@
     <tr><td>Location</td><td>Optional. Used on-device only for zmanim.</td></tr>
     <tr><td>Preferences</td><td>Stored locally on the device.</td></tr>
     <tr><td>Progress</td><td>Stored locally on the device.</td></tr>
-    <tr><td>Accounts</td><td>None; Pray For uses an anonymous device-local identity (optional).</td></tr>
+    <tr><td>Accounts</td><td>No named accounts. Pray For (optional) creates an anonymous backend account with no personal data when the feed is opened.</td></tr>
     <tr><td>Prayer requests (Pray For)</td><td>Optional. Publicly visible in the app; auto-expire &le; 48h; purged &le; 30 days.</td></tr>
     <tr><td>Purchases</td><td>Handled by Apple/Google; anonymous subscription status via RevenueCat.</td></tr>
     <tr><td>Analytics</td><td>Not included.</td></tr>
