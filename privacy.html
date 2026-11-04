@@ -94,7 +94,7 @@
 <body>
 <div class="container">
   <h1>Privacy Policy — Kav Siddur</h1>
-  <p><em>Last updated: September 25, 2026</em></p>
+  <p><em>Last updated: October 8, 2026</em></p>
 
   <div class="meta">
     <strong>Effective date:</strong> 2026-04-14 &nbsp;|&nbsp;
@@ -118,10 +118,17 @@
   <p>If you allow it, the app reads your device location to calculate local prayer times (zmanim). The zmanim calculation happens on your device, and the coordinates are kept only on your device. To show a city name, the app asks Apple&rsquo;s (or Google&rsquo;s) geocoding service to translate the coordinates once; we never receive, store, or share your location.</p>
   <p>Location permission is optional. If you decline it, you can still use the prayer library, Tehillim, and study tools.</p>
 
+  <h3>Daven together (nearby, optional)</h3>
+  <p>If you turn on Daven together in the reader, the app uses your local network (peer-to-peer Wi-Fi and Bluetooth, no internet) to find nearby phones that enter the same four-digit code. The only thing sent is your place in a service (which prayer and section), so others can follow along. No names, no device names, and no prayer text are sent. Nothing is stored, nothing is sent to us or any server, and the session ends when you stop it or close the app. iOS asks for Local Network permission the first time you use it. Please consult your rabbi about using a phone on Shabbat.</p>
+
   <h3>On-device preferences and progress</h3>
   <p>Kav Siddur stores settings such as nusach, font choices, display preferences, reminder toggles, and local reading progress on your own device so the app can remember your setup between launches.</p>
   <p>This information stays on your device and is not uploaded to us in the public release.</p>
   <p>The app may occasionally ask Apple to show its standard App Store rating prompt after you finish a service. To decide when, it keeps a count of finished services on your device; the count is never uploaded.</p>
+
+  <h3>Your activity history (on this device only)</h3>
+  <p>To show &ldquo;Your prayer life&rdquo; (your days with prayer, streaks, the prayers you open most, reading time, psalms and Omer days this year), Kav Siddur keeps a history of your activity in the app on your device: which prayers and psalms you open, for how long, what you finish, which features and settings you use, and when. It never includes anything you type (no names, notes or search words) and never your location.</p>
+  <p>This history stays on your device and is never sent to us or anyone else. You can delete it at any time in Settings (&ldquo;Clear my activity history&rdquo;) or on the Your prayer life page; deleting the app deletes it too. If we ever offer to share anonymous totals for community statistics, it will be a separate, clearly explained choice that is off unless you turn it on.</p>
 
   <h3>Sharing a passage</h3>
   <p>If you share a passage, the app draws the image on your device and hands it, together with a link, to your device&rsquo;s share sheet. Nothing is sent to us. If you choose &ldquo;Save Image&rdquo;, iOS asks your permission to add that one image to your photo library; the app never reads your photos.</p>
@@ -130,7 +137,7 @@
   <h2>Data We Do Not Collect</h2>
 
   <ul>
-    <li>No named user accounts, email addresses, or profile data (the optional Pray For feature uses an anonymous backend account with no personal data — see below)</li>
+    <li>No named user accounts, email addresses, or profile data (posting on the optional Pray For board or creating a prayer request uses an anonymous backend account with no personal data — see below)</li>
     <li>No analytics or advertising SDKs</li>
     <li>No crash-reporting or diagnostic telemetry in the public release</li>
     <li>No camera, microphone, or contacts access, and no reading of your photo library</li>
@@ -143,11 +150,17 @@
   <h3>What is shared publicly</h3>
   <p>A prayer request consists of a Hebrew name, a category, an optional short note, and a duration. All of these are visible to every user of the app. Do not include health details about an identifiable person without their consent, and do not include contact information &mdash; notes containing links, email addresses, or phone numbers are rejected.</p>
 
+  <h3>Prayer requests with a link</h3>
+  <p>You can also share a prayer request as a candle card with a short link. A request stores: the name as you entered it (full, first name only, or initials &mdash; the app sends only what you chose to show), the request type (healing, memorial, safe return, or other occasion), an optional note of up to 280 characters, when it expires, a count of prayers, and a once-per-day marker for each person who taps &ldquo;I prayed&rdquo; so the same person is not counted twice in a day. Requests are <strong>unlisted by default</strong>: they do not appear on the Pray For board unless you choose to list them, and are reachable only through their link. Anyone with the link can read the name, note, and any updates you post, and can open the link in a web browser without the app.</p>
+  <p>You choose how long a request lasts, up to 30 days for healing and safe return, 90 days for other occasions, and 365 days for a memorial; closing a request as recovered shortens what remains to 3 days. Expired requests are purged on the schedule above. You can delete a request at any time, and the link then shows nothing.</p>
+  <p>The link page loads the request from our backend provider (Supabase), sets no cookies, and has no analytics. When you tap &ldquo;I prayed&rdquo; on the page, it stores a random code in your browser&rsquo;s local storage to count one prayer per day; it is not linked to your identity. If you tap &ldquo;Report this request&rdquo; on the page, we store the request&rsquo;s id, that same random browser code, and the short reason you may type (up to 200 characters, optional) so we can review it by hand and count one report per browser; web reports alone never remove a request. Prayer and report requests are also rate-limited per request, using the request&rsquo;s id. To slow down guessing of links, looking up a link that never existed is counted against one of 4,096 coarse groups derived from your network address (the address itself is not stored); these counters are deleted after about two hours.</p>
+  <p>Opening a request link in the app never creates an account: the app reads the request with the same public key the link page uses. When you tap &ldquo;I prayed&rdquo; or report the request in the app, it sends a random code made once for your copy of the app, so each person is counted once per day and one report is counted per phone, and we store it the same way as the browser code above. The code is kept only inside the app (deleting the app deletes it), is not linked to your identity, and is never sent anywhere else. If you already have the anonymous identity described below, the app uses that instead, so it can show which requests are yours.</p>
+
   <h3>Anonymous identity</h3>
-  <p>When you open the Pray For feed (even just to read it), the app creates an anonymous account with our backend provider and keeps its session credentials on your device. We never ask for your name, email, or phone number, and the account carries no personal information. This anonymous identity links your own requests to your device so you can delete them; it is not connected to any real-world identity.</p>
+  <p>When you open the Pray For feed (even just to read it), post on it, or create a prayer request with a link, the app creates an anonymous account with our backend provider and keeps its session credentials on your device. Opening, praying for, or reporting a request someone sent you never creates one. We never ask for your name, email, or phone number, and the account carries no personal information. This anonymous identity links your own requests to your device so you can delete them; it is not connected to any real-world identity.</p>
 
   <h3>Retention</h3>
-  <p>Requests expire automatically after at most 48 hours and are permanently deleted from our systems within 30 days of expiry. &ldquo;I prayed&rdquo; interactions are stored against the anonymous identity for counting and abuse prevention, and are deleted on the same schedule.</p>
+  <p>Requests expire automatically after at most 48 hours and are permanently deleted from our systems within 30 days of expiry. &ldquo;I prayed&rdquo; interactions are stored against the anonymous identity (or, without one, the random code described above) for counting and abuse prevention, and are deleted on the same schedule.</p>
 
   <h3>Deletion</h3>
   <p>You can delete any of your own requests immediately, and you can delete all data associated with your anonymous identity at any time from the Pray For screen (&ldquo;Delete my Pray For data&rdquo;).</p>
@@ -167,11 +180,13 @@
   <table>
     <tr><th>Category</th><th>Behavior in public release</th></tr>
     <tr><td>Location</td><td>Optional. Used on-device only for zmanim.</td></tr>
+    <tr><td>Daven together</td><td>Optional. Local network only; shares just your place in a service with phones that enter your code. Nothing stored or sent to us.</td></tr>
     <tr><td>Preferences</td><td>Stored locally on the device.</td></tr>
     <tr><td>Progress</td><td>Stored locally on the device.</td></tr>
+    <tr><td>Activity history</td><td>Kept only on the device for Your prayer life; never sent. You can clear it in Settings.</td></tr>
     <tr><td>Shared passages</td><td>Created on the device; sent only where you choose in the share sheet.</td></tr>
-    <tr><td>Accounts</td><td>No named accounts. Pray For (optional) creates an anonymous backend account with no personal data when the feed is opened.</td></tr>
-    <tr><td>Prayer requests (Pray For)</td><td>Optional. Publicly visible in the app; auto-expire &le; 48h; purged &le; 30 days.</td></tr>
+    <tr><td>Accounts</td><td>No named accounts. Pray For (optional) creates an anonymous backend account with no personal data when the feed is opened or a prayer request is created. Opening a request link someone sent you creates none; praying for or reporting it sends only a random per-install code.</td></tr>
+    <tr><td>Prayer requests (Pray For)</td><td>Optional. Board posts are publicly visible in the app and expire within 48h; link requests are unlisted, visible to anyone with the link, last up to 7 to 365 days by type, and can be deleted by you at any time; purged &le; 30 days after expiry.</td></tr>
     <tr><td>Purchases</td><td>Handled by Apple/Google; anonymous subscription status via RevenueCat.</td></tr>
     <tr><td>Analytics</td><td>Not included.</td></tr>
     <tr><td>Crash telemetry</td><td>Not included.</td></tr>
